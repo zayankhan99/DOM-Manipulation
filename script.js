@@ -1,10 +1,9 @@
-
 document.addEventListener('DOMContentLoaded', () => {
 
-    // Creating NavBar
+    const app = document.getElementById('app'); // Declare app globally
 
+    // Creating NavBar
     function createNav() {
-        const app = document.getElementById('app');
         const navbar = document.createElement('nav');
         navbar.className = 'navbar';
 
@@ -40,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     createNav();
 
-    // Creating  Hero
+    // Creating Hero
     function createHero() {
         const Hero = document.createElement('div');
         Hero.className = 'Hero';
@@ -53,28 +52,28 @@ document.addEventListener('DOMContentLoaded', () => {
         HeroButton.className = 'button';
         HeroButton.textContent = 'Get Started';
 
-
         Hero.appendChild(HeroHeading);
         Hero.appendChild(HeroButton);
         app.appendChild(Hero);
-    };
+    }
 
-    createHero()
+    createHero();
 
     // Creating Services
     function createServices() {
         const ServicesSection = document.createElement('section');
         const ServicesHeading = document.createElement('div');
-        ServicesHeading.className = 'services'
+        ServicesHeading.className = 'services';
         const ServiceHeading = document.createElement('h1');
         ServiceHeading.textContent = 'Our Services';
-
-
+    
+        // Append the heading to the services section
+        ServicesHeading.appendChild(ServiceHeading);
+        ServicesSection.appendChild(ServicesHeading);
+    
         const features = document.createElement('div');
-
         features.className = 'features';
-
-
+    
         const featureData = [
             {
                 title: 'Service One',
@@ -92,34 +91,33 @@ document.addEventListener('DOMContentLoaded', () => {
                 icon: '💡'
             },
         ];
-
+    
         featureData.forEach(item => {
             const feature = document.createElement('div');
             feature.className = 'feature';
-
+    
             const icon = document.createElement('div');
             icon.style.fontSize = '2em';
             icon.textContent = item.icon;
-
+    
             const title = document.createElement('h2');
             title.textContent = item.title;
-
+    
             const desc = document.createElement('p');
             desc.textContent = item.description;
-
-
-            features.appendChild(ServiceHeading);
+    
             feature.appendChild(icon);
             feature.appendChild(title);
             feature.appendChild(desc);
             features.appendChild(feature);
         });
-
-        app.appendChild(features);
+    
+        ServicesSection.appendChild(features);
+        document.getElementById('app').appendChild(ServicesSection);  // Use 'ServicesSection' to append the entire section
     }
-
-    createServices()
-
+    
+    createServices();
+    // Creating About Section
     function CreateAbout() {
         const aboutContainer = document.createElement('div');
         aboutContainer.className = 'about-container';
@@ -133,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const aboutParagraph = document.createElement('p');
         aboutParagraph.textContent =
-            'Welcome to our company! We are a team of passionate individuals dedicated to delivering top-quality products and services. ';
+            'Welcome to our company! We are a team of passionate individuals dedicated to delivering top-quality products and services.';
         aboutText.appendChild(aboutParagraph);
 
         const aboutImg = document.createElement('div');
@@ -147,18 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
         aboutContainer.appendChild(aboutText);
         aboutContainer.appendChild(aboutImg);
 
-        const app = document.getElementById('app');
         app.appendChild(aboutContainer);
     }
-    CreateAbout()
+    CreateAbout();
 
-    // Creating ContactForm
+    // Creating Contact Form
     function CreateContact() {
         const formContainer = document.getElementById('contact-form-container');
-    
+
         const form = document.createElement('form');
         form.className = 'form-container';
-    
+
         const nameField = document.createElement('div');
         nameField.className = 'form-group';
         const nameLabel = document.createElement('label');
@@ -169,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         nameInput.required = true;
         nameField.appendChild(nameLabel);
         nameField.appendChild(nameInput);
-    
+
         const emailField = document.createElement('div');
         emailField.className = 'form-group';
         const emailLabel = document.createElement('label');
@@ -180,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
         emailInput.required = true;
         emailField.appendChild(emailLabel);
         emailField.appendChild(emailInput);
-    
+
         const messageField = document.createElement('div');
         messageField.className = 'form-group';
         const messageLabel = document.createElement('label');
@@ -190,31 +187,27 @@ document.addEventListener('DOMContentLoaded', () => {
         messageTextarea.required = true;
         messageField.appendChild(messageLabel);
         messageField.appendChild(messageTextarea);
-    
+
         const submitButton = document.createElement('button');
         submitButton.textContent = 'Submit';
         submitButton.type = 'submit';
-    
+
         form.appendChild(nameField);
         form.appendChild(emailField);
         form.appendChild(messageField);
         form.appendChild(submitButton);
-    
+
         formContainer.appendChild(form);
-    
+
         form.addEventListener('submit', function (event) {
-            event.preventDefault(); // Prevent default form submission
-            alert('Form submitted!'); // Placeholder for form processing logic
+            event.preventDefault();
+            alert('Form submitted!');
         });
     }
-    
-  
-    document.addEventListener('DOMContentLoaded', function() {
-        CreateContact();
-    });
-    
-    
-    // Creating foooterr 
+
+    CreateContact();
+
+    // Creating Footer
     function CreateFooter() {
         const footer = document.createElement('div');
         footer.className = 'footer';
@@ -225,6 +218,8 @@ document.addEventListener('DOMContentLoaded', () => {
         footer.appendChild(footerText);
         app.appendChild(footer);
     }
-    CreateFooter()
+
+    CreateFooter();
 });
 
+console.log(app)
