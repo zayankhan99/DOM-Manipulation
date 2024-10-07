@@ -1,0 +1,196 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+    position: sticky;
+    top: 0;
+}
+
+.navbar .logo {
+    color: #fff;
+    font-size: 1.5em;
+    text-decoration: none;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar .nav-links li {
+    margin-left: 20px;
+}
+
+.navbar .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+.navbar .nav-links a:hover {
+    color: #4CAF50;
+}
+
+.Hero{
+    background-image: url(https://img.pikbest.com/wp/202406/space-background-wallpapers_9601436.jpg!w700wp);
+    
+}
+
+.Hero {
+    background-color: #4CAF50;
+    color: white;
+    padding: 60px 20px;
+    text-align: center;
+    height: 30rem;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.Hero h1 {
+    margin: 0;
+    font-size: 3em;
+}
+
+.button {
+    display: inline-block;
+    padding: 15px 25px;
+    font-size: 1em;
+    margin-top: 20px;
+    color: #fff;
+    background-color: #333;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #555;
+}
+
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+}
+
+.feature {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    text-align: center;
+}
+
+
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: white;
+}
+
+.about-text {
+    max-width: 50%;
+}
+
+.about-text h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-text p {
+    font-size: 18px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.about-img {
+    max-width: 40%;
+}
+
+.about-img img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.form-container {
+    width: 400px;
+    margin: auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar .nav-links {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar .nav-links li {
+        margin: 10px 0;
+    }
+}
+
