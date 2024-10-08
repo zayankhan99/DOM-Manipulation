@@ -1,222 +1,244 @@
-document.addEventListener('DOMContentLoaded', () => {
 
-    const app = document.getElementById('app');
 
-    // Creating NavBar
-    function createNav() {
-        const navbar = document.createElement('nav');
-        navbar.className = 'navbar';
+const app = document.getElementById('app');
 
-        const logo = document.createElement('a');
-        logo.href = '#';
-        logo.className = 'logo';
-        logo.textContent = 'LOGO';
+// Creating NavBar
+function createNav() {
+    const navbar = document.createElement('nav');
+    navbar.className = 'navbar';
 
-        const navLinks = document.createElement('ul');
-        navLinks.className = 'nav-links';
+    const logo = document.createElement('a');
+    logo.href = '#';
+    logo.className = 'logo';
+    logo.textContent = 'LOGO';
 
-        const links = [
-            { name: 'Home', href: '#' },
-            { name: 'Features', href: '#features' },
-            { name: 'About', href: '#about' },
-            { name: 'Contact', href: '#contact' },
-        ];
+    const navLinks = document.createElement('ul');
+    navLinks.className = 'nav-links';
 
-        links.forEach(link => {
-            const li = document.createElement('li');
-            const a = document.createElement('a');
-            a.href = link.href;
-            a.textContent = link.name;
+    const links = [
+        { name: 'Home', href: '#' },
+        { name: 'Features', href: '#features' },
+        { name: 'About', href: '#about' },
+        { name: 'Contact', href: '#contact' },
+    ];
 
-            li.appendChild(a);
-            navLinks.appendChild(li);
-        });
+    links.forEach(link => {
+        const li = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = link.href;
+        a.textContent = link.name;
 
-        navbar.appendChild(logo);
-        navbar.appendChild(navLinks);
-        app.appendChild(navbar);
-    }
+        li.appendChild(a);
+        navLinks.appendChild(li);
+    });
 
-    createNav();
+    navbar.appendChild(logo);
+    navbar.appendChild(navLinks);
+    app.appendChild(navbar);
+}
 
-    // Creating Hero
-    function createHero() {
-        const Hero = document.createElement('div');
-        Hero.className = 'Hero';
+createNav();
 
-        const HeroHeading = document.createElement('h1');
-        HeroHeading.textContent = 'Welcome to Our Page';
+// Creating Hero
+function createHero() {
+    const Hero = document.createElement('div');
+    Hero.className = 'Hero ';
 
-        const HeroButton = document.createElement('a');
-        HeroButton.href = '#';
-        HeroButton.className = 'button';
-        HeroButton.textContent = 'Get Started';
+    const HeroHeading = document.createElement('h1');
+    HeroHeading.textContent = 'Welcome to Our Page';
 
-        Hero.appendChild(HeroHeading);
-        Hero.appendChild(HeroButton);
-        app.appendChild(Hero);
-    }
+    const HeroButton = document.createElement('a');
+    HeroButton.href = '#';
+    HeroButton.className = 'button';
+    HeroButton.textContent = 'Get Started';
 
-    createHero();
+    Hero.appendChild(HeroHeading);
+    Hero.appendChild(HeroButton);
+    app.appendChild(Hero);
+}
 
-    // Creating Services
-    function createServices() {
-        const ServicesSection = document.createElement('section');
-        const ServicesHeading = document.createElement('div');
-        ServicesHeading.className = 'services';
-        const ServiceHeading = document.createElement('h1');
-        ServiceHeading.textContent = 'Our Services';
+createHero();
 
-        ServicesHeading.appendChild(ServiceHeading);
-        ServicesSection.appendChild(ServicesHeading);
+// Creating Services
+function createServices() {
+    const ServicesSection = document.createElement('section');
+    const ServicesHeading = document.createElement('div');
+    ServicesHeading.className = 'services container';
+    const ServiceHeading = document.createElement('h1');
+    ServiceHeading.textContent = 'Our Services';
 
-        const features = document.createElement('div');
-        features.className = 'features';
+    ServicesHeading.appendChild(ServiceHeading);
+    ServicesSection.appendChild(ServicesHeading);
 
-        const featureData = [
-            {
-                title: 'Service One',
-                description: 'Description for Service one.',
-                icon: '🔥'
-            },
-            {
-                title: 'Service Two',
-                description: 'Description for Service two.',
-                icon: '🚀'
-            },
-            {
-                title: 'Service Three',
-                description: 'Description for Service three.',
-                icon: '💡'
-            },
-        ];
+    const features = document.createElement('div');
+    features.className = 'features';
 
-        featureData.forEach(item => {
-            const feature = document.createElement('div');
-            feature.className = 'feature';
+    const featureData = [
+        {
+            title: 'Service One',
+            description: 'Description for Service one. ',
+            icon: '🔥'
+        },
+        {
+            title: 'Service Two',
+            description: 'Description for Service two.',
+            icon: '🚀'
+        },
+        {
+            title: 'Service Three',
+            description: 'Description for Service three.',
+            icon: '💡'
+        },
+    ];
 
-            const icon = document.createElement('div');
-            icon.style.fontSize = '2em';
-            icon.textContent = item.icon;
+    featureData.forEach(item => {
+        const feature = document.createElement('div');
+        feature.className = 'feature';
 
-            const title = document.createElement('h2');
-            title.textContent = item.title;
+        const icon = document.createElement('div');
+        icon.style.fontSize = '2em';
+        icon.textContent = item.icon;
 
-            const desc = document.createElement('p');
-            desc.textContent = item.description;
+        const title = document.createElement('h2');
+        title.textContent = item.title;
 
-            feature.appendChild(icon);
-            feature.appendChild(title);
-            feature.appendChild(desc);
-            features.appendChild(feature);
-        });
+        const desc = document.createElement('p');
+        desc.textContent = item.description;
 
-        ServicesSection.appendChild(features);
-        document.getElementById('app').appendChild(ServicesSection);
-    }
+        feature.appendChild(icon);
+        feature.appendChild(title);
+        feature.appendChild(desc);
+        features.appendChild(feature);
+    });
 
-    createServices();
-    // Creating About Section
-    function CreateAbout() {
-        const aboutContainer = document.createElement('div');
-        aboutContainer.className = 'about-container';
+    ServicesSection.appendChild(features);
+    document.getElementById('app').appendChild(ServicesSection);
+}
 
-        const aboutText = document.createElement('div');
-        aboutText.className = 'about-text';
+createServices();
+// Creating About Section
+function CreateAbout() {
+    const aboutContainer = document.createElement('div');
+    aboutContainer.className = 'about-container container';
 
-        const aboutHeading = document.createElement('h1');
-        aboutHeading.textContent = 'About Us';
-        aboutText.appendChild(aboutHeading);
+    const aboutText = document.createElement('div');
+    aboutText.className = 'about-text';
 
-        const aboutParagraph = document.createElement('p');
-        aboutParagraph.textContent =
-            'Welcome to our company! We are a team of passionate individuals dedicated to delivering top-quality products and services.';
-        aboutText.appendChild(aboutParagraph);
+    const aboutHeading = document.createElement('h1');
+    aboutHeading.textContent = 'About Us';
+    aboutText.appendChild(aboutHeading);
 
-        const aboutImg = document.createElement('div');
-        aboutImg.className = 'about-img';
+    const aboutParagraph = document.createElement('p');
+    aboutParagraph.textContent =
+        'Welcome to our company! We are a team of passionate individuals dedicated to delivering top-quality products and services.';
+    aboutText.appendChild(aboutParagraph);
 
-        const imgElement = document.createElement('img');
-        imgElement.src = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
-        imgElement.alt = 'About Us pic';
-        aboutImg.appendChild(imgElement);
+    const aboutImg = document.createElement('div');
+    aboutImg.className = 'about-img';
 
-        aboutContainer.appendChild(aboutText);
-        aboutContainer.appendChild(aboutImg);
+    const imgElement = document.createElement('img');
+    imgElement.src = 'https://letsenhance.io/static/8f5e523ee6b2479e26ecc91b9c25261e/1015f/MainAfter.jpg';
+    imgElement.alt = 'About Us pic';
+    aboutImg.appendChild(imgElement);
 
-        app.appendChild(aboutContainer);
-    }
-    CreateAbout();
+    aboutContainer.appendChild(aboutText);
+    aboutContainer.appendChild(aboutImg);
 
-    // Creating Contact Form
-    function CreateContact() {
-        const formContainer = document.getElementById('app');
+    app.appendChild(aboutContainer);
+}
+CreateAbout();
 
-        const form = document.createElement('form');
-        form.className = 'form-container';
+// Creating Contact Form
 
-        const nameField = document.createElement('div');
-        nameField.className = 'form-group';
-        const nameLabel = document.createElement('label');
-        nameLabel.textContent = 'Name:';
-        const nameInput = document.createElement('input');
-        nameInput.type = 'text';
-        nameInput.placeholder = 'Your Name';
-        nameInput.required = true;
-        nameField.appendChild(nameLabel);
-        nameField.appendChild(nameInput);
+function CreateContact() {
+    const formContainer = document.getElementById('app');
 
-        const emailField = document.createElement('div');
-        emailField.className = 'form-group';
-        const emailLabel = document.createElement('label');
-        emailLabel.textContent = 'Email:';
-        const emailInput = document.createElement('input');
-        emailInput.type = 'email';
-        emailInput.placeholder = 'Your Email';
-        emailInput.required = true;
-        emailField.appendChild(emailLabel);
-        emailField.appendChild(emailInput);
+   const layoutWrapper = document.createElement('div');
+    layoutWrapper.className = 'layout container';
 
-        const messageField = document.createElement('div');
-        messageField.className = 'form-group';
-        const messageLabel = document.createElement('label');
-        messageLabel.textContent = 'Message:';
-        const messageTextarea = document.createElement('textarea');
-        messageTextarea.placeholder = 'Your Message';
-        messageTextarea.required = true;
-        messageField.appendChild(messageLabel);
-        messageField.appendChild(messageTextarea);
+    const formSection = document.createElement('div');
+    formSection.className = 'form-section';
 
-        const submitButton = document.createElement('button');
-        submitButton.textContent = 'Submit';
+    const heading = document.createElement('h2');
+    heading.textContent = 'Contact Us';
+    formSection.appendChild(heading);
 
-        form.appendChild(nameField);
-        form.appendChild(emailField);
-        form.appendChild(messageField);
-        form.appendChild(submitButton);
+    const form = document.createElement('form');
+    form.className = 'form-container';
 
-        formContainer.appendChild(form);
+    const nameField = document.createElement('div');
+    nameField.className = 'form-group';
+    const nameLabel = document.createElement('label');
+    nameLabel.textContent = 'Name:';
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Your Name';
+    nameInput.required = true;
+    nameField.appendChild(nameLabel);
+    nameField.appendChild(nameInput);
 
-        form.addEventListener('submit', function (event) {
-            alert('Form submitted!');
-        });
-    }
+    const emailField = document.createElement('div');
+    emailField.className = 'form-group';
+    const emailLabel = document.createElement('label');
+    emailLabel.textContent = 'Email:';
+    const emailInput = document.createElement('input');
+    emailInput.type = 'email';
+    emailInput.placeholder = 'Your Email';
+    emailInput.required = true;
+    emailField.appendChild(emailLabel);
+    emailField.appendChild(emailInput);
 
-    CreateContact();
+    const messageField = document.createElement('div');
+    messageField.className = 'form-group';
+    const messageLabel = document.createElement('label');
+    messageLabel.textContent = 'Message:';
+    const messageTextarea = document.createElement('textarea');
+    messageTextarea.placeholder = 'Your Message';
+    messageTextarea.required = true;
+    messageField.appendChild(messageLabel);
+    messageField.appendChild(messageTextarea);
 
-    // Creating Footer
-    function CreateFooter() {
-        const footer = document.createElement('div');
-        footer.className = 'footer';
+    const submitButton = document.createElement('button');
+    submitButton.textContent = 'Submit';
 
-        const footerText = document.createElement('p');
-        footerText.textContent = '© 2024 Your Company. All rights reserved.';
+    form.appendChild(nameField);
+    form.appendChild(emailField);
+    form.appendChild(messageField);
+    form.appendChild(submitButton);
+    formSection.appendChild(form);
 
-        footer.appendChild(footerText);
-        app.appendChild(footer);
-    }
+    const textSection = document.createElement('div');
+    textSection.className = 'text-section';
+    const text = document.createElement('p');
+    text.textContent = 'Feel free to contact us for any queries or suggestions. We value your feedback and will get back to you as soon as possible!';
+    textSection.appendChild(text);
 
-    CreateFooter();
-});
+    layoutWrapper.appendChild(formSection);
+    layoutWrapper.appendChild(textSection);
+    formContainer.appendChild(layoutWrapper);
+
+    form.addEventListener('submit', function (event) {
+        event.preventDefault();  
+        alert('Form submitted!');
+    });
+}
+
+CreateContact();
+
+
+// Creating Footer
+function CreateFooter() {
+    const footer = document.createElement('div');
+    footer.className = 'footer';
+
+    const footerText = document.createElement('p');
+    footerText.textContent = '© 2024 Your Company. All rights reserved.';
+
+    footer.appendChild(footerText);
+    app.appendChild(footer);
+}
+
+CreateFooter();
+
 
 console.log(app)
