@@ -44,6 +44,8 @@ body {
 
 .Hero {
     background-image: url(https://img.pikbest.com/wp/202406/space-background-wallpapers_9601436.jpg!w700wp);
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .Hero {
@@ -213,4 +215,9 @@ button {
 
 button:hover {
     background-color: #1aa265;
+}
+
+.contact-heading{
+    display: flex;
+    justify-content: center ;
 }

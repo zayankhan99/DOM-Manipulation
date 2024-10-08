@@ -119,7 +119,7 @@ createServices();
 // Creating About Section
 function CreateAbout() {
     const aboutContainer = document.createElement('div');
-    aboutContainer.className = 'about-container container';
+    aboutContainer.className = 'about-container ';
 
     const aboutText = document.createElement('div');
     aboutText.className = 'about-text';
@@ -153,14 +153,15 @@ CreateAbout();
 function CreateContact() {
     const formContainer = document.getElementById('app');
 
-   const layoutWrapper = document.createElement('div');
-    layoutWrapper.className = 'layout container';
+    const layout = document.createElement('div');
+    layout.className = 'layout';
 
     const formSection = document.createElement('div');
     formSection.className = 'form-section';
 
     const heading = document.createElement('h2');
     heading.textContent = 'Contact Us';
+    heading.className = 'contact-heading'
     formSection.appendChild(heading);
 
     const form = document.createElement('form');
@@ -213,13 +214,22 @@ function CreateContact() {
     text.textContent = 'Feel free to contact us for any queries or suggestions. We value your feedback and will get back to you as soon as possible!';
     textSection.appendChild(text);
 
-    layoutWrapper.appendChild(formSection);
-    layoutWrapper.appendChild(textSection);
-    formContainer.appendChild(layoutWrapper);
+    layout.appendChild(formSection);
+    layout.appendChild(textSection);
+    formContainer.appendChild(layout);
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault();  
+        event.preventDefault('');
+
+        const nameCons = nameInput.value
+        console.log('name=>', nameCons);
+
+        const emailCons = emailInput.value
+        console.log('E-mail=>', emailCons);
         alert('Form submitted!');
+        nameInput.value = null
+        emailInput.value = null
+
     });
 }
 
