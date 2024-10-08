@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    const app = document.getElementById('app'); // Declare app globally
+    const app = document.getElementById('app');
 
     // Creating NavBar
     function createNav() {
@@ -66,56 +66,55 @@ document.addEventListener('DOMContentLoaded', () => {
         ServicesHeading.className = 'services';
         const ServiceHeading = document.createElement('h1');
         ServiceHeading.textContent = 'Our Services';
-    
-        // Append the heading to the services section
+
         ServicesHeading.appendChild(ServiceHeading);
         ServicesSection.appendChild(ServicesHeading);
-    
+
         const features = document.createElement('div');
         features.className = 'features';
-    
+
         const featureData = [
             {
                 title: 'Service One',
-                description: 'Description for feature one.',
+                description: 'Description for Service one.',
                 icon: '🔥'
             },
             {
                 title: 'Service Two',
-                description: 'Description for feature two.',
+                description: 'Description for Service two.',
                 icon: '🚀'
             },
             {
                 title: 'Service Three',
-                description: 'Description for feature three.',
+                description: 'Description for Service three.',
                 icon: '💡'
             },
         ];
-    
+
         featureData.forEach(item => {
             const feature = document.createElement('div');
             feature.className = 'feature';
-    
+
             const icon = document.createElement('div');
             icon.style.fontSize = '2em';
             icon.textContent = item.icon;
-    
+
             const title = document.createElement('h2');
             title.textContent = item.title;
-    
+
             const desc = document.createElement('p');
             desc.textContent = item.description;
-    
+
             feature.appendChild(icon);
             feature.appendChild(title);
             feature.appendChild(desc);
             features.appendChild(feature);
         });
-    
+
         ServicesSection.appendChild(features);
-        document.getElementById('app').appendChild(ServicesSection);  // Use 'ServicesSection' to append the entire section
+        document.getElementById('app').appendChild(ServicesSection);
     }
-    
+
     createServices();
     // Creating About Section
     function CreateAbout() {
@@ -151,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Creating Contact Form
     function CreateContact() {
-        const formContainer = document.getElementById('contact-form-container');
+        const formContainer = document.getElementById('app');
 
         const form = document.createElement('form');
         form.className = 'form-container';
@@ -190,7 +189,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const submitButton = document.createElement('button');
         submitButton.textContent = 'Submit';
-        submitButton.type = 'submit';
 
         form.appendChild(nameField);
         form.appendChild(emailField);
@@ -200,7 +198,6 @@ document.addEventListener('DOMContentLoaded', () => {
         formContainer.appendChild(form);
 
         form.addEventListener('submit', function (event) {
-            event.preventDefault();
             alert('Form submitted!');
         });
     }
