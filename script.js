@@ -119,7 +119,7 @@ createServices();
 // Creating About Section
 function CreateAbout() {
     const aboutContainer = document.createElement('div');
-    aboutContainer.className = 'about-container ';
+    aboutContainer.className = 'about-container container ';
 
     const aboutText = document.createElement('div');
     aboutText.className = 'about-text';
@@ -148,13 +148,62 @@ function CreateAbout() {
 }
 CreateAbout();
 
+function CreateTestimonials() {
+    const testimonialContainer = document.getElementById('app');
+
+    const heading = document.createElement('h2');
+    heading.textContent = 'What Our Customers Say';
+    heading.className = 'TestHeading';
+    testimonialContainer.appendChild(heading);
+
+
+    const TestimonialMain = document.createElement('div');
+    TestimonialMain.className = 'TestimonialMain container';
+    testimonialContainer.appendChild(TestimonialMain);
+
+    const TestimonialData = [
+        {
+            name: 'Zayan',
+            messsage: 'This service was outstanding'
+        },
+        {
+            name: 'Khizer',
+            messsage: 'This service was outstanding'
+        },
+        {
+            name: 'Qasim',
+            messsage: 'Really satisfied with the product.'
+        },
+        {
+            name: 'Joshua',
+            messsage: 'Really satisfied with the product.'
+        }
+    ];
+
+    TestimonialData.forEach(testimonial => {
+        const testimonialDiv = document.createElement('div');
+        testimonialDiv.className = 'testimonial';
+
+        const nameElement = document.createElement('h4');
+        nameElement.textContent = testimonial.name;
+
+        const messageElement = document.createElement('p');
+        messageElement.textContent = testimonial.messsage;
+
+        testimonialDiv.appendChild(nameElement);
+        testimonialDiv.appendChild(messageElement);
+        TestimonialMain.appendChild(testimonialDiv);
+    });
+}
+
+CreateTestimonials();
 // Creating Contact Form
 
 function CreateContact() {
     const formContainer = document.getElementById('app');
 
     const layout = document.createElement('div');
-    layout.className = 'layout';
+    layout.className = 'layout container';
 
     const formSection = document.createElement('div');
     formSection.className = 'form-section';
