@@ -268,17 +268,20 @@ function CreateContact() {
     formContainer.appendChild(layout);
 
     form.addEventListener('submit', function (event) {
-        event.preventDefault('');
 
-        const nameCons = nameInput.value
+        const nameCons = nameInput.value;
         console.log('name=>', nameCons);
 
-        const emailCons = emailInput.value
+        const emailCons = emailInput.value;
         console.log('E-mail=>', emailCons);
+
+        const msgCons = messageTextarea.value;
+        console.log('Your message=>', msgCons)
+
         alert('Form submitted!');
         nameInput.value = null
         emailInput.value = null
-
+        console.log(messageTextarea.value)
     });
 }
 
