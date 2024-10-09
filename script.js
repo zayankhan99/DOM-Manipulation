@@ -164,7 +164,7 @@ function CreateTestimonials() {
     const TestimonialData = [
         {
             name: 'Zayan',
-            messsage: 'This service was outstanding'
+            messsage: 'Wonderful staff. Clean office. Thorough wellness check. As a mother, I felt “seen” for the first time in 10 years. 5/5'
         },
         {
             name: 'Khizer',
@@ -172,7 +172,7 @@ function CreateTestimonials() {
         },
         {
             name: 'Qasim',
-            messsage: 'Really satisfied with the product.'
+            messsage: 'Canton Medical Center is a great place for your Primary Care needs. The staff is small but are all very friendly and helpful..'
         },
         {
             name: 'Joshua',
@@ -182,10 +182,13 @@ function CreateTestimonials() {
 
     TestimonialData.forEach(testimonial => {
         const testimonialDiv = document.createElement('div');
-        testimonialDiv.className = 'testimonial';
+        // const testimonialimg = document.createElement('img');
+        // testimonialimg.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInfEpZsmFc2S3TI-KZI74bUcttMvnz4Q27g&s'
+        // testimonialimg.className = 'testimonialimg';
+        // testimonialContainer.appendChild(testimonialimg)
 
         const nameElement = document.createElement('h4');
-        nameElement.textContent = testimonial.name;
+        nameElement.textContent = testimonial.name.toUpperCase();
 
         const messageElement = document.createElement('p');
         messageElement.textContent = testimonial.messsage;
@@ -193,10 +196,12 @@ function CreateTestimonials() {
         testimonialDiv.appendChild(nameElement);
         testimonialDiv.appendChild(messageElement);
         TestimonialMain.appendChild(testimonialDiv);
+        app.appendChild(TestimonialMain);
     });
 }
 
 CreateTestimonials();
+
 // Creating Contact Form
 
 function CreateContact() {
@@ -260,14 +265,14 @@ function CreateContact() {
     const textSection = document.createElement('div');
     textSection.className = 'text-section';
     const text = document.createElement('p');
-    text.textContent = 'Feel free to contact us for any queries or suggestions. We value your feedback and will get back to you as soon as possible!';
+    text.textContent = 'Feel free to contact us for any queries or suggestions. We value your feedback and will get back to you as soon as possible! Feel free to contact us for any queries or suggestions. We value your feedback and will get back to you as soon as possible!';
     textSection.appendChild(text);
 
     layout.appendChild(formSection);
     layout.appendChild(textSection);
     formContainer.appendChild(layout);
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', function () {
 
         const nameCons = nameInput.value;
         console.log('name=>', nameCons);
@@ -278,9 +283,11 @@ function CreateContact() {
         const msgCons = messageTextarea.value;
         console.log('Your message=>', msgCons)
 
-        alert('Form submitted!');
+        alert('Form submitted check console :)');
+
         nameInput.value = null
         emailInput.value = null
+        messageTextarea.value = null
         console.log(messageTextarea.value)
     });
 }
@@ -289,6 +296,7 @@ CreateContact();
 
 
 // Creating Footer
+
 function CreateFooter() {
     const footer = document.createElement('div');
     footer.className = 'footer';

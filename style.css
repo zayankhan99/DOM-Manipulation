@@ -185,6 +185,10 @@ body {
     padding-top: 12rem;
 }
 
+.text-section{
+    text-align: center;
+}
+
 .form-container {
     display: flex;
     flex-direction: column;
@@ -253,4 +257,8 @@ button:hover {
 .testimonial p {
     font-size: 14px;
     color: #555;
+}
+.testimonialDiv img{
+    width: 10px;
+    height: 10px;
 }
