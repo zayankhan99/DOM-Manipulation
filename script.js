@@ -147,7 +147,6 @@ function CreateAbout() {
     app.appendChild(aboutContainer);
 }
 CreateAbout();
-
 function CreateTestimonials() {
     const testimonialContainer = document.getElementById('app');
 
@@ -156,51 +155,82 @@ function CreateTestimonials() {
     heading.className = 'TestHeading';
     testimonialContainer.appendChild(heading);
 
-
     const TestimonialMain = document.createElement('div');
     TestimonialMain.className = 'TestimonialMain container';
     testimonialContainer.appendChild(TestimonialMain);
 
+
     const TestimonialData = [
         {
             name: 'Zayan',
-            messsage: 'Wonderful staff. Clean office. Thorough wellness check. As a mother, I felt “seen” for the first time in 10 years. 5/5'
+            message: 'Wonderful staff. Clean office. Thorough wellness check. As a mother, I felt “seen” for the first time in 10 years. 5/5'
         },
         {
             name: 'Khizer',
-            messsage: 'This service was outstanding'
+            message: 'This service was outstanding'
         },
         {
             name: 'Qasim',
-            messsage: 'Canton Medical Center is a great place for your Primary Care needs. The staff is small but are all very friendly and helpful..'
+            message: 'Canton Medical Center is a great place for your Primary Care needs. The staff is small but are all very friendly and helpful.'
         },
         {
             name: 'Joshua',
-            messsage: 'Really satisfied with the product.'
+            message: 'Really satisfied with the product.'
         }
     ];
 
-    TestimonialData.forEach(testimonial => {
+
+    TestimonialData.forEach((testimonial, index) => {
         const testimonialDiv = document.createElement('div');
-        // const testimonialimg = document.createElement('img');
-        // testimonialimg.src= 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRInfEpZsmFc2S3TI-KZI74bUcttMvnz4Q27g&s'
-        // testimonialimg.className = 'testimonialimg';
-        // testimonialContainer.appendChild(testimonialimg)
+        testimonialDiv.className = 'testimonial-card';
+        testimonialDiv.style.display = index === 0 ? 'block' : 'none';
 
         const nameElement = document.createElement('h4');
         nameElement.textContent = testimonial.name.toUpperCase();
 
         const messageElement = document.createElement('p');
-        messageElement.textContent = testimonial.messsage;
+        messageElement.textContent = testimonial.message;
 
         testimonialDiv.appendChild(nameElement);
         testimonialDiv.appendChild(messageElement);
         TestimonialMain.appendChild(testimonialDiv);
-        app.appendChild(TestimonialMain);
+    });
+
+    const buttonDiv = document.createElement('div');
+    buttonDiv.className = 'buttons';
+    const prevButton = document.createElement('button');
+    prevButton.className = 'prev';
+    prevButton.textContent = '<<<';
+
+    const nextButton = document.createElement('button');
+    nextButton.className = 'next ';
+    nextButton.textContent = '>>>';
+
+    testimonialContainer.appendChild(buttonDiv);
+    testimonialContainer.appendChild(prevButton);
+    testimonialContainer.appendChild(nextButton);
+
+    let currentIndex = 0;
+    const testimonialCards = document.querySelectorAll('.testimonial-card');
+
+    const showTestimonial = (index) => {
+        testimonialCards.forEach(card => card.style.display = 'none');
+        testimonialCards[index].style.display = 'block';
+    };
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? testimonialCards.length - 1 : currentIndex - 1;
+        showTestimonial(currentIndex);
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === testimonialCards.length - 1) ? 0 : currentIndex + 1;
+        showTestimonial(currentIndex);
     });
 }
 
 CreateTestimonials();
+
 
 // Creating Contact Form
 

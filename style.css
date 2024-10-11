@@ -185,7 +185,7 @@ body {
     padding-top: 12rem;
 }
 
-.text-section{
+.text-section {
     text-align: center;
 }
 
@@ -204,30 +204,39 @@ label {
     font-weight: bold;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 8px;
 }
 
 button {
     padding: 10px;
-    background-color: #1aa265;
+    background-color: #18aa7a;
     color: white;
-    border: none;
-    cursor: pointer;
+    
+  
 }
 
 button:hover {
     background-color: #0e4f31;
 }
 
-.contact-heading{
+.contact-heading {
     display: flex;
-    justify-content: center ;
+    justify-content: center;
 }
+
 .TestHeading {
+    display: flex;
+    justify-content: center;
     text-align: center;
     padding: 20px;
+}
+.testimonial-card h4, p  {
+    justify-content: center;
+    display: flex;
+    text-align: center;
 }
 
 .TestimonialMain {
@@ -239,6 +248,7 @@ button:hover {
 }
 
 .testimonial {
+    
     border: 1px solid #000000;
     padding: 20px;
     border-radius: 10px;
@@ -258,7 +268,45 @@ button:hover {
     font-size: 14px;
     color: #555;
 }
-.testimonialDiv img{
+
+.testimonialDiv img {
     width: 10px;
     height: 10px;
+}
+
+.TestimonialMain {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.testimonial-card {
+    background: #c8f9d0;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 10px;
+    width: 500px;
+    transition: transform 0.2s;
+    height: 140px;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.buttons {
+    background-color: black;
+}
+.prev .next {
+    background-color: #333;
+}
+.prev {
+    float: left;
+    margin-left: 7.5rem;
+}
+
+.next {
+    float: right;
+    margin-right: 7.5rem;
 }
